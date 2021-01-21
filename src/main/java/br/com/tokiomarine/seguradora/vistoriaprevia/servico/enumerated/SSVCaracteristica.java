@@ -1,0 +1,99 @@
+package br.com.tokiomarine.seguradora.vistoriaprevia.servico.enumerated;
+
+
+/**
+ * Enum de Caracteristicas do SSV, utilizado pelos sistemas da Grade de Aceitação
+ * @author E105892
+ *
+ */
+public enum SSVCaracteristica {
+
+    REGIAOTARIFARIA(8L),
+    INDENIZACAO(122L),
+    FABRICANTE(9L),
+    MODELO(10L),
+    ANOFABRICACAO(24L),
+    COMBUSTIVEL(12L),
+    TIPOVEICULO(15L),
+    ANOMODELO(13L),
+    ZEROKM(120L),
+    DESPESAEXTRA(146L),
+    CEP(255L),
+    LOTACAO(28L),
+    CODIGOCONGENERE(210L),
+    SUCURSALCONGENERE(250L),
+    NUMEROAPOLICECONGENERE(211L),
+    VENCIMENTOAPOLICECONGENERE(212L),
+    NUMEROITEMCONGENERE(251L),
+    PLACA(26L),
+    CHASSIREMARCADO(340L),
+    CHASSI(25L),
+    CORVEICULO(27L),
+    NUMVISTORIA(46L),
+    DATASAIDAZEROKM(213L),
+    ITEMCONGENERE(251L),
+    TIPOACESSORIO(20L),
+    ASSISTENCIA24(45L),
+    VIDRO(49L),
+    KMADDREBOQUE(320L),
+    POSSUIDISPOSITIVO(323L),
+    GRUPOVIDRO(327L),
+    CATEGORIATARIFARIA(326L),
+    KITGAS(363L),
+    VEICULOALIENADO(369L),
+    DATAFIMGARANTIAZEROKM(373L),
+    LOGOMARCA(374L),
+
+    // Excusivos Carga
+    EMPRESAVISTORIADORA(67L),
+    DATAVISTORIA(64L),
+    TIPOEQUIPAMENTO(68L),
+    TIPOCARROCERIA(333L),
+    EIXOADAPTADO(334L),
+    CABINESUPLEMENTAR(335L),
+    CEPPERNOITE(337L),
+    CARGADESCARGA(338L),
+    ISENCAOFRANQCARROCERIA(341L),
+    PERDAFATDIARIAS(367L),
+    PERDAFATVALORDIARIAS(368L),
+
+    // EXCLUSIVOS PASSEIO
+    DATAKM(173L),
+    KMINICIAL(172L),
+    CARRORESERVADIAS(145L),
+    CARRORESERVATPVEICULO(318L),
+    CARRORESERVATPOFICINA(319L),
+    ISENCAOFRANQUIA(329L),
+    VEICULOBLINDADO(365L),
+    ISENCAOFISCAL(370L),
+    PRAZOEXTENSAOGARANTIA(372L),
+
+    // EXCLUSIVOS POPULAR
+    COMPLEMENTARPERDAPARCIAL(342L),
+    INDENIZACAOINTEGRALROUBOFURTO(343L),
+    INDENIZACAOINTEGRALCOLISAO(344L),
+    INDENIZACAOINTEGRALINCENDIORAIOEXPLOSAO(345L),
+    TIPOOFICINAREPARO(346L),
+    TIPOPECAREPARO(347L);
+
+	private Long codigoCaracteristica;
+	private SSVCaracteristica(Long caracteristica) {
+		codigoCaracteristica = caracteristica;
+	}
+
+	public static SSVCaracteristica getCaracteristica(Long codigoCaracteristica){
+
+		for(SSVCaracteristica caracteristica : values()){
+
+			if(caracteristica.getCodigoCaracteristica().equals(codigoCaracteristica)){
+				return caracteristica;
+			}
+		}
+		return null;
+	}
+
+	public Long getCodigoCaracteristica() {
+		return codigoCaracteristica;
+	}
+
+}
